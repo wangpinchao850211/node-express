@@ -1,0 +1,2 @@
+::1 - - [11/Mar/2020:07:05:12 +0000] "GET /api/blog/list HTTP/1.1" 200 477 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+::ffff:127.0.0.1 - LOGIN [11/Mar/2020:07:05:22 +0000] "POST /api/user/login HTTP/1.1" 200 11 "http://localhost:4202/AngularBasic/form" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
