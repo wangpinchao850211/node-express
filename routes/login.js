@@ -17,7 +17,13 @@ router.post('/login', function(req, res, next) {
             req.session.realname = data.realname
 
             console.log(req.session);
-            res.json(new SuccessModel())
+            const reqData = {
+                flag: 'login',
+                token: data.token
+            } ;
+            const loginRes = new SuccessModel(reqData, '登陆成功');
+            console.log(loginRes);
+            res.json(loginRes)
             return
         }
         res.json(new ErrorModel('登录失败'));

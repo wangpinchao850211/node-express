@@ -6,7 +6,11 @@ class BaseModel {
             message = null
         }
         if (data) {
-            this.data = data
+            if (data.flag == 'login') { // login接口，将token返回
+                this.data = data.token
+            } else {
+                this.data = data
+            }
         }
         if (message) {
             this.message = message
