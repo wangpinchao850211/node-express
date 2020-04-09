@@ -38,12 +38,12 @@ const login = (username, password) => {
     // 生成加密密码
     password = genPassword(password)
     const source = {
-        username: 'wangpinchao_86@126.com',
-        password: '3b0034a778af2bb019fe7b3b128ee6aa'
+        username: 'qihuan.wang@126.com',
+        password: '3b0034a778af2bb019fe7b3b128ee6aa' // wqh9090QQ
     }
     const promise = new Promise((resolve, reject) => {
         if (escape(source.username) == username && source.password === password) {
-            const tokenvalue = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbmdwaW5jaGFvXzg2QDEyNi5jb20iLCJwYXNzd29yZCI6IjNiMDAzNGE3NzhhZjJiYjAxOWZlN2IzYjEyOGVlNmFhIiwiYWRtaW4iOnRydWUsImlzcyI6IndhbmdwaW5jaGFvIn0.UjRtdDDau0NqkdqvC4SQYm-XCE5Dp-it9Fxj53jeHF8'
+            const tokenvalue = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InFpaHVhbi53YW5nQDEyNi5jb20iLCJhZG1pbiI6dHJ1ZSwiaXNzIjoid2FuZ3BpbmNoYW8ifQ.AjOTOXD-GOHl1n1EIYM4Jz2PpdW1zxG67_i6EytbWz0'
             resolve({username: source.username, realname: '王品朝', status: 1, token: tokenvalue})
         } else {
             resolve({status: 0, token: null})
