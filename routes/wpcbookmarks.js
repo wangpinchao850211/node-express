@@ -18,7 +18,11 @@ const loginCheck = require('../middleware/loginCheck');
 router.get('/marklist', function(req, res, next) {
     const result = getList();
     return result.then(data => {
-        res.json(new SuccessModel('get menu list'));
+        console.log(data);
+        const reqData = {
+            books: data
+        } ;
+        res.json(new SuccessModel(reqData, 'get menu list'));
     })
 });
 /* GET 博客某一菜单下的所有文章 All article in a field. */
