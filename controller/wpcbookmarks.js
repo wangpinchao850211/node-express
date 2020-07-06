@@ -12,6 +12,13 @@ const menulist = [
         "categories": ["web基础", "布局基础"]
     },
     {
+        "id": "E002",
+        "name": "Sass/Scss",
+        "rating": "3.9",
+        "desc": "Css预编译语言，scss使用技巧",
+        "categories": ["css高级", "scss"]
+    },
+    {
         "id": "A002",
         "name": "css3",
         "rating": "3.5",
@@ -26,6 +33,13 @@ const menulist = [
         "categories": ["web基础", "dom操作基础", "bom操作基础"]
     },
     {
+        "id": "C001",
+        "name": "angular",
+        "rating": "3.9",
+        "desc": "angular框架特点",
+        "categories": ["JS高级", "web框架升级优化"]
+    },
+    {
         "id": "B001",
         "name": "http",
         "rating": "3.5",
@@ -33,11 +47,25 @@ const menulist = [
         "categories": ["web基础", "http基础", "webSocket"]
     },
     {
+        "id": "D001",
+        "name": "typescript",
+        "rating": "3.9",
+        "desc": "typescript语言特点，typescript使用技巧",
+        "categories": ["JS高级", "typescript编译原理"]
+    },
+    {
         "id": "B002",
         "name": "git",
         "rating": "3.2",
         "desc": "项目code管理常用命令，github网址使用",
         "categories": ["项目管理", "node/npm命令"]
+    },
+    {
+        "id": "E003",
+        "name": "Echart",
+        "rating": "3.6",
+        "desc": "echart使用技巧",
+        "categories": ["css高级", "scss"]
     },
     {
         "id": "B003",
@@ -54,13 +82,6 @@ const menulist = [
         "categories": ["web基础", "code调试使用"]
     },
     {
-        "id": "C001",
-        "name": "angular",
-        "rating": "3.9",
-        "desc": "angular框架特点",
-        "categories": ["JS高级", "web框架升级优化"]
-    },
-    {
         "id": "C002",
         "name": "react",
         "rating": "3.9",
@@ -75,13 +96,6 @@ const menulist = [
         "categories": ["JS高级", "web框架升级优化"]
     },
     {
-        "id": "D001",
-        "name": "typescript",
-        "rating": "3.9",
-        "desc": "typescript语言特点，typescript使用技巧",
-        "categories": ["JS高级", "typescript编译原理"]
-    },
-    {
         "id": "D002",
         "name": "webpack",
         "rating": "3.9",
@@ -94,20 +108,6 @@ const menulist = [
         "rating": "3.9",
         "desc": "jQuery使用技巧",
         "categories": ["css高级", "dom操作"]
-    },
-    {
-        "id": "E002",
-        "name": "Sass/Scss",
-        "rating": "3.9",
-        "desc": "Css预编译语言，scss使用技巧",
-        "categories": ["css高级", "scss"]
-    },
-    {
-        "id": "E003",
-        "name": "Echart",
-        "rating": "3.6",
-        "desc": "echart使用技巧",
-        "categories": ["css高级", "scss"]
     },
     {
         "id": "E004",
@@ -154,17 +154,20 @@ const getMenuAllArticle = (menuid) => {
     return promise
 }
 
-const getDetail = (menuid, id) => {
+const getDetail = (ID) => {
     // 第一步，通过menuid获取到菜单的文件
     // 第二步，通过id获取到此菜单下相应的文章，返回
-    console.log(menuid);
-    console.log(id);
+    // console.log(menuid);
+    // console.log('161行');
+    // console.log(ID);
     const promise = new Promise((resolve, reject) => {
         // if (err) {
         //     reject(err)
         //     return
         // }
-        // resolve(result)
+        const result = menulist.filter(i => i.id === ID);
+        console.log(result);
+        resolve(result[0]); // 返回第一个即可
     })  
     return promise;
 }

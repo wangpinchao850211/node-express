@@ -32,10 +32,12 @@ router.get('/marklist:id', function(req, res, next) {
         res.json(new SuccessModel('get All article by id'));
     })
 });
-/* GET 某一文章的博客详情. */
-router.get('/detail', (req, res, next) => {
+/* GET 某一文章的博客详情.(已使用) */
+router.get('/detail:id', (req, res, next) => {
     // 需要菜单id，和文章的id
-    const result = getDetail(req.query.menuid, req.query.id)
+    const id = req.url.replace(/\/detail/g,"");
+    // console.log(id);
+    const result = getDetail(id);
     return result.then(data => {
         res.json(
             new SuccessModel(data)
